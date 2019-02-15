@@ -2,18 +2,28 @@ import java.util.Scanner;
 public class HelloWorld{
     public static void main(String[] args) {
         Scanner s=new Scanner(System.in);
-        int a=s.nextInt();
-        System.out.println("第一个整数 "+a);
-        int b=s.nextInt();
-        System.out.println("第二个整数 "+b);
-        float c=s.nextFloat();
-        System.out.println("读取的浮点数 "+c);
-        String d=s.nextLine();
-        System.out.println("读取的字符串为" +d);
-        int i=s.nextInt();
-        System.out.println("读取的整数是 "+i);
-        String rn=s.nextLine();
-        String e=s.nextLine();
-        System.out.println("读取的字符串是 "+e);
+        System.out.println("请输入您的身高(m):");
+        float height=s.nextFloat();
+        System.out.println("请输入您的体重(kg):");
+        float weight=s.nextFloat();
+        float BMI=weight/(height*height);
+        System.out.println("您当前的BIM是："+BMI);
+
+        String status="";
+
+        if(BMI<18.5)
+            status="体重过轻";
+        else if(BMI<24)
+            status="正常范围";
+        else if(BMI<27)
+            status="体重过重";
+        else if(BMI<30)
+            status="轻度肥胖";
+        else if(BMI<35)
+            status="中度肥胖";
+        else if(BMI>=35)
+            status="重度肥胖";
+        System.out.println("您的体重状态是："+status);
+
     }
 }
