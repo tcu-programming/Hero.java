@@ -1,29 +1,28 @@
 import java.util.Scanner;
 public class HelloWorld{
     public static void main(String[] args) {
-        Scanner s=new Scanner(System.in);
-        System.out.println("请输入您的身高(m):");
-        float height=s.nextFloat();
-        System.out.println("请输入您的体重(kg):");
-        float weight=s.nextFloat();
-        float BMI=weight/(height*height);
-        System.out.println("您当前的BIM是："+BMI);
-
-        String status="";
-
-        if(BMI<18.5)
-            status="体重过轻";
-        else if(BMI<24)
-            status="正常范围";
-        else if(BMI<27)
-            status="体重过重";
-        else if(BMI<30)
-            status="轻度肥胖";
-        else if(BMI<35)
-            status="中度肥胖";
-        else if(BMI>=35)
-            status="重度肥胖";
-        System.out.println("您的体重状态是："+status);
+       Scanner s=new Scanner(System.in);
+        System.out.println("请输入月份");
+       int month=s.nextInt();
+       switch (month){
+           case 1:
+           case 2:
+           case 3:
+               System.out.println("春天");
+               break;
+           case 4:
+           case 5:
+           case 6:
+               System.out.println("夏天");
+               break;
+           case 7:
+           case 8:
+           case 9:
+               System.out.println("秋天");
+               break;
+               default:
+                   System.out.println("这是什么鬼？");
+       }
 
     }
 }
