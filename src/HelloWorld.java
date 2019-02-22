@@ -1,31 +1,37 @@
-/*假设你月收入是3000，除开平时花销，每个月留下1000块钱进行投资。
+/*寻找某两个数相除，其结果 离黄金分割点 0.618最近
 
-然后你认真的钻研了 《股票和基金 21天从入门到精通》，达到了每年20%的投资回报率。
-
-那么问题来了，以每个月投资1000块钱的节奏，持续投资多少年，总收入达到100万
-（复利计算按照每年12000投入计算，不按照每月计息）
-
-复利公式：
-F = p* ( (1+r)^n );
-F 最终收入
-p 本金
-r 年利率
-n 存了多少年*/
+分母和分子不能同时为偶数
+分母和分子 取值范围在[1-20] */
 public class HelloWorld{
     public static void main(String[] args) {
-   double p=12000;
-   double r=0.2;
-   double sum=0;
-   int end=1000000;
-   for(int n=1;n<100;n++){
-       sum+=12000;
-       sum*=(1+r);
-       if(sum>=end){
-           System.out.println("需要投资"+n+"年");
-           break;
-       }
-
-   }
-
+        final float H = 0.618f;
+        float a;
+        float b;
+        float min = 1;
+        float divide = 10;
+        float minus;
+        float minA =0;
+        float minB =0;
+        outloop:
+        for (a = 1; a < 20; a++)
+        {
+            for (b = 1; b < 20; b++)
+            {
+                if(a%2==0 && b%2 == 0)
+                    continue;
+                divide = a / b;
+                minus = (divide-H)>=0?(divide-H):(H-divide);
+                if(minus < min)
+                {
+                    min = minus;
+                    minA = a;
+                    minB = b;
+                    if(min==0)
+                        break outloop;
+                }
+            }
+        }
+        System.out.println("离黄金分割点0.618最近的两个数相除是："
+                +minA+" / "+minB +" = "+minA/minB);
     }
 }
