@@ -1,17 +1,15 @@
-/*水仙花数定义：
-1. 一定是3位数
-2. 每一位的立方，加起来恰好是这个数本身，比如153=1*1*1+5*5*5+3*3*3
 
-寻找所有的水仙花数 */
 public class HelloWorld{
     public static void main(String[] args) {
-        for(int i=100;i<1000;i++){
-            int a=i/100;
-            int b=i/10%10;
-            int c=i%10;
-            if((a*a*a+b*b*b+c*c*c)==i){
-                System.out.println("所有的水仙花数为："+i);
-            }
+        int a[]=new int[5];
+        a[0]=(int)(Math.random()*100);
+        a[1]=(int)(Math.random()*100);
+        a[2]=(int)(Math.random()*100);
+        a[3]=(int)(Math.random()*100);
+        a[4]=(int)(Math.random()*100);
+        for(int i=0;i<a.length;i++)
+            System.out.println(a[i]);
+        for(int j=a.length-1;j>=0;j--)
+            System.out.println(a[j]);
         }
     }
-}
